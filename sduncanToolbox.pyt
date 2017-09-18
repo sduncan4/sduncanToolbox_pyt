@@ -7,7 +7,7 @@ thisToolbox = "sduncanToolbox.pyt"
 # Define generator for join data
 def joindataGen(joinTable,fieldList,sortField):
 	with arcpy.da.SearchCursor(joinTable,fieldList,sql_clause=['DISTINCT',
-															   'ORDER BY '+sortField]) as cursor:
+								   'ORDER BY '+sortField]) as cursor:
 		for row in cursor:
 			yield row
 # Function for progress reporting
